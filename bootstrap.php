@@ -161,6 +161,9 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 		public function plugin_init() {
 		}
 
+		public function admin_init() {
+		}
+
 		public function register_hooks() {
 		}
 
