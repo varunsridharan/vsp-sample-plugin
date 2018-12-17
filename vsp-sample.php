@@ -23,7 +23,7 @@ require_once __DIR__ . '/wponion/wponion.php';
 
 if ( function_exists( 'vsp_maybe_load' ) ) {
 	vsp_maybe_load( VSP_SAMPLE_PATH, array(
-		'lib'         => array( 'wppointer' ),
+		'lib'          => array( 'wp-pointer' ),
 		'integrations' => array(),
 	), 'vsp_sample_init' );
 }
