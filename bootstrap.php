@@ -147,6 +147,23 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 */
 			$config['logging'] = true;
 
+			/**
+			 * Config To enable Autoloader PHP Lib
+			 *
+			 * @uses \Varunsridharan\PHP\Autoloader https://github.com/varunsridharan/php-autoloader
+			 *
+			 * array(
+			 *    'namespace' => 'somename',
+			 *    'basepath' => __DIR__.'/includes/',
+			 *    'remaps' => array(),
+			 *    'prepend'=> false,
+			 * )
+			 */
+			$config['autoloader'] = array(
+				'namespace' => '\MyPlugin\Admin',
+				'basepath'  => __DIR__ . '/includes/admin/',
+			);
+
 			parent::__construct( $config );
 		}
 
