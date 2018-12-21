@@ -74,13 +74,13 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 * Plugin's Addon Module Configuration.
 			 * Config Options
 			 * array(
-			 * 'base_path'               => '',
-			 * 'base_url'                => '',
-			 * 'addon_listing_tab_name'  => 'addons',
-			 * 'addon_listing_tab_title' => 'Addons',
-			 * 'addon_listing_tab_icon'  => 'fa fa-plus',
-			 * 'file_headers'            => array(),
-			 * 'show_category_count'     => true,
+			 *    'base_path'               => '',
+			 *    'base_url'                => '',
+			 *    'addon_listing_tab_name'  => 'addons',
+			 *    'addon_listing_tab_title' => 'Addons',
+			 *    'addon_listing_tab_icon'  => 'fa fa-plus',
+			 *    'file_headers'            => array(),
+			 *    'show_category_count'     => true,
 			 * )
 			 */
 			$config['addons'] = true;
@@ -90,8 +90,8 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 * Below arguments are related to WPOnion.
 			 * basic required ars
 			 * array(
-			 * 'option_name' => '',
-			 * 'theme' => 'modern', #modern|fresh|your-theme
+			 *    'option_name' => '',
+			 *    'theme' => 'modern', #modern|fresh|your-theme
 			 * )
 			 *
 			 */
@@ -108,24 +108,28 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 
 			/**
 			 * Config for system tools.
-			 * Possible Values
-			 * true / false / array(
-			 * 'system_tools_menu' => true, # true/false/array of values
-			 * 'menu'              => true, # true/false
-			 * 'system_status'     => true, #true/false/array of values
-			 * 'logging'           => true, #true/false/array of values
+			 * Possible Values : true / false / array()
+			 * array(
+			 *    'system_tools_menu' => true, # true/false/array of values
+			 *    'menu'              => true, # true/false
+			 *    'system_status'     => true, #true/false/array of values
+			 *    'logging'           => true, #true/false/array of values
 			 * )
 			 *
 			 * system_status /logging / system_tool_menu array data can be like below
-			 * array('name' => '','title' => '','icon'=>'')
+			 * array(
+			 *    'name' => '',
+			 *    'title' => '',
+			 *    'icon'=>''
+			 * )
 			 * The above array is related to WPOnion Page Argument.
 			 *
 			 * $config['system_tools'] = true;
 			 * $config['system_tools'] = false;
 			 * $config['system_tools'] = array(
-			 * 'menu' => array(
-			 * 'title' => __( 'Sys Tools' ),
-			 * ),
+			 *    'menu' => array(
+			 *        'title' => __( 'Sys Tools' ),
+			 *    ),
 			 * );
 			 *
 			 */
@@ -171,14 +175,16 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 		 * below function fires after wponion is loaded.
 		 */
 		public function wponion_loaded() {
-			wponion_admin_page( array(
-				'assets'     => array( 'vsp_load_core_assets', 'wponion_load_core_assets' ),
-				'page_title' => __( 'Custom Submenu' ),
-				'menu_title' => __( 'Custom Menu' ),
-				'render'     => array( 'VSP_Sample_Custom_Page', 'render' ),
-				'submenu'    => wponion_settings( 'vsp_sample_settings' )->menu_instance,
-				'menu_slug'  => 'custom-page2',
-			) );
+			if ( is_admin() && false !== wponion_settings( 'vsp_sample_settings' ) ) {
+				wponion_admin_page( array(
+					'assets'     => array( 'vsp_load_core_assets', 'wponion_load_core_assets' ),
+					'page_title' => __( 'Custom Submenu' ),
+					'menu_title' => __( 'Custom Menu' ),
+					'render'     => array( 'VSP_Sample_Custom_Page', 'render' ),
+					'submenu'    => wponion_settings( 'vsp_sample_settings' )->menu_instance,
+					'menu_slug'  => 'custom-page2',
+				) );
+			}
 		}
 	}
 }
