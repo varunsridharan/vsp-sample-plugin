@@ -154,14 +154,18 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 *
 			 * array(
 			 *    'namespace' => 'somename',
-			 *    'basepath' => __DIR__.'/includes/',
-			 *    'remaps' => array(),
+			 *    'base_path' => __DIR__.'/includes/',
+			 *    'options' =>  array(
+			 *        'exclude' => false,
+			 *        'mapping' => array(),
+			 *        'debug'   => false,
+			 *     ),
 			 *    'prepend'=> false,
 			 * )
 			 */
 			$config['autoloader'] = array(
 				'namespace' => '\MyPlugin\Admin',
-				'basepath'  => __DIR__ . '/includes/admin/',
+				'base_path' => __DIR__ . '/includes/',
 			);
 
 			parent::__construct( $config );
@@ -169,6 +173,7 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 
 		public function load_files() {
 			$this->load_file( 'includes/class-*' );
+			$this->action( 'comeonloaded' );
 		}
 
 		/**
