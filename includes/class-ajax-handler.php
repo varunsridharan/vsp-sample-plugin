@@ -6,7 +6,7 @@
  * Time: 07:40 PM
  */
 
-class VSP_Sample_Ajax_Handler extends \VSP\Modules\Ajaxer {
+class VSP_Sample_Ajax_Handler extends \Varunsridharan\WordPress\Ajaxer {
 	/**
 	 * Action Name
 	 * provide value if all ajax requests runs in a single action key.
@@ -68,11 +68,11 @@ class VSP_Sample_Ajax_Handler extends \VSP\Modules\Ajaxer {
 			case 3:
 				vsp_send_json_callback( true, array(
 					'add_response' => "jQuery('div.ajax-response').html('" . $html . "')",
-					'normal_alert' => swal_question( 'Whats your anme?' ),
+					'normal_alert' => swal2_question( 'Whats your anme?' ),
 				) );
 				break;
 		}
 	}
 }
 
-return VSP_Sample_Ajax_Handler::instance();
+return new VSP_Sample_Ajax_Handler();
