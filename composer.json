@@ -1,0 +1,5 @@
+{
+  "require" : {
+	"wponion/wponion" : "0.0.9"
+  }
+}
