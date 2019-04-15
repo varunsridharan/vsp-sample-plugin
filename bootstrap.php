@@ -62,7 +62,7 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 		 *
 		 * @var null
 		 */
-		public $hook_slug = 'vsp-sample';
+		public $hook_slug = 'vsample';
 
 		/**
 		 * VSP_Sample constructor.
@@ -83,7 +83,10 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 *    'show_category_count'     => true,
 			 * )
 			 */
-			$config['addons'] = true;
+			$config['addons'] = array(
+				'base_path' => $this->plugin_path( 'addons/' ),
+				'base_url'  => $this->plugin_url( 'addons/' ),
+			);
 
 			/**
 			 * Settings Page Configuration.
@@ -96,11 +99,12 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 *
 			 */
 			$config['settings_page'] = array(
-				'option_name'     => 'vsp_sample_settings',
-				'theme'           => 'modern',
+				'option_name'     => 'vsp_sample_settings2',
+				'theme'           => 'wp_modern',
 				'menu'            => array(
-					'menu_title' => __( 'VSP Sample' ),
-					'page_title' => __( 'VSP Sample Plugin' ),
+					'menu_slug'  => 'vsp2',
+					'menu_title' => __( 'VSP Sample2' ),
+					'page_title' => __( 'VSP Sample Plugin2' ),
 					'submenu'    => true,
 				),
 				'framework_title' => __( 'Settings Page' ),
@@ -112,7 +116,6 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 * array(
 			 *    'system_tools_menu' => true, # true/false/array of values
 			 *    'menu'              => true, # true/false
-			 *    'system_status'     => true, #true/false/array of values
 			 *    'logging'           => true, #true/false/array of values
 			 * )
 			 *
