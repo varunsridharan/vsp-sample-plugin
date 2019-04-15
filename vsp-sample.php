@@ -20,7 +20,7 @@ defined( 'VSP_SAMPLE_FILE' ) || define( 'VSP_SAMPLE_FILE', __FILE__ );
 
 require_once __DIR__ . '/vsp-framework/vendor/autoload.php';
 require_once __DIR__ . '/vsp-framework/vsp-init.php';
-require_once __DIR__ . '/wponion/wponion.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 if ( function_exists( 'vsp_maybe_load' ) ) {
 	vsp_maybe_load( VSP_SAMPLE_PATH, array(
