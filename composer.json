@@ -1,5 +1,6 @@
 {
-  "require" : {
-	"wponion/wponion" : "^0.0.9"
+  "minimum-stability" : "dev",
+  "require"           : {
+	"wponion/wponion" : "dev-development"
   }
 }

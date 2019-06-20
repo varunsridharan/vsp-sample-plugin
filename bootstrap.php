@@ -16,59 +16,17 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 	 */
 	final class VSP_Sample extends \VSP\Framework {
 		/**
-		 * Text_domain
-		 *
-		 * @var null
-		 */
-		public $text_domain = 'vsp-sample';
-
-		/**
-		 * Version
-		 *
-		 * @var null
-		 */
-		public $version = VSP_SAMPLE_VERSION;
-
-		/**
-		 * File
-		 *
-		 * @var null
-		 */
-		public $file = VSP_SAMPLE_FILE;
-
-		/**
-		 * Plugin Slug
-		 *
-		 * @var null
-		 */
-		public $slug = 'vsp-sample';
-
-		/**
-		 * DB_slug
-		 *
-		 * @var null
-		 */
-		public $db_slug = 'vsp_sample';
-
-		/**
-		 * Name
-		 *
-		 * @var null
-		 */
-		public $name = VSP_SAMPLE_NAME;
-
-		/**
-		 * Hook_slug
-		 *
-		 * @var null
-		 */
-		public $hook_slug = 'vsample';
-
-		/**
 		 * VSP_Sample constructor.
 		 */
 		public function __construct() {
-			$config = array();
+			$config = array(
+				'hook_slug' => 'vsample',
+				'name'      => VSP_SAMPLE_NAME,
+				'db_slug'   => 'vsp_sample',
+				'slug'      => 'vsp-sample',
+				'file'      => VSP_SAMPLE_FILE,
+				'version'   => VSP_SAMPLE_VERSION,
+			);
 
 			/**
 			 * Plugin's Addon Module Configuration.
@@ -137,12 +95,6 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 *
 			 */
 			$config['system_tools'] = true;
-
-			/**
-			 * Custom Lib To popup a alert after x number of days to ask for plugin review.
-			 * please refer https://github.com/varunsridharan/vs-wp-review-me for options informations.
-			 */
-			$config['VS_WP_Review_Me'] = true;
 
 			/**
 			 * Config to enable logging option.

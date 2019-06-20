@@ -1,0 +1,24 @@
+{
+  "name"             : "Addon Sample 2",
+  "url"              : "https://codecanyon.net/item/booked-payments-with-woocommerce-addon/12824257?ref=varunsridharan",
+  "version"          : "1.0",
+  "description"      : "Integrates With Booked Payments with WooCommerce (Add-On) which allows you to sell appoinments with role based pricing ",
+  "author"           : "Varun Sridharan",
+  "author_url"       : "http://varunsridharan.in",
+  "last_updated"     : "2016-03-04",
+  "category"         : [ "Integration,DID,JK" ],
+  "required_plugins" : {
+	"booked/booked.php"                                           : {
+	  "name"    : "Booked",
+	  "author"  : "Varun Sridharan",
+	  "version" : "1.9.10",
+	  "url"     : "https://codecanyon.net/item/booked-appointments-appointment-booking-for-wordpress/9466968?ref=varunsridharan"
+	},
+	"booked-woocommerce-payments/booked-woocommerce-payments.php" : {
+	  "name"    : "Booked Payments with WooCommerce ",
+	  "author"  : "Varun Sridharan",
+	  "version" : "1.3.3",
+	  "url"     : "https://codecanyon.net/item/booked-payments-with-woocommerce-addon/12824257?ref=varunsridharan"
+	}
+  }
+}
