@@ -18,6 +18,7 @@ defined( 'VSP_SAMPLE_VERSION' ) || define( 'VSP_SAMPLE_VERSION', '1.0' );
 defined( 'VSP_SAMPLE_NAME' ) || define( 'VSP_SAMPLE_NAME', __( 'VSP Sample' ) );
 defined( 'VSP_SAMPLE_FILE' ) || define( 'VSP_SAMPLE_FILE', __FILE__ );
 
+require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/vsp-framework/vsp-init.php';
 
 if ( function_exists( 'vsp_maybe_load' ) ) {

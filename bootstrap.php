@@ -19,14 +19,13 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 		 * VSP_Sample constructor.
 		 */
 		public function __construct() {
-			$config = array(
-				'hook_slug' => 'vsample',
-				'name'      => VSP_SAMPLE_NAME,
-				'db_slug'   => 'vsp_sample',
-				'slug'      => 'vsp-sample',
-				'file'      => VSP_SAMPLE_FILE,
-				'version'   => VSP_SAMPLE_VERSION,
-			);
+			$this->file      = VSP_SAMPLE_FILE;
+			$this->name      = VSP_SAMPLE_NAME;
+			$this->slug      = 'vsp-sample';
+			$this->db_slug   = 'vsp_sample';
+			$this->version   = VSP_SAMPLE_VERSION;
+			$this->hook_slug = 'vsaple';
+			$config          = array();
 
 			/**
 			 * Plugin's Addon Module Configuration.
@@ -57,15 +56,17 @@ if ( ! class_exists( 'VSP_Sample' ) ) {
 			 *
 			 */
 			$config['settings_page'] = array(
-				'option_name'     => 'vsp_sample_settings2',
+				'option_name'     => '_wponion_demo_settings',
+				'framework_title' => __( 'Simple Demo' ),
+				'framework_desc'  => __( 'Demo Page' ),
 				'theme'           => 'wp_modern',
+				'ajax'            => true,
+				'search'          => true,
+				'is_single_page'  => true,
 				'menu'            => array(
-					'menu_slug'  => 'vsp2',
-					'menu_title' => __( 'VSP Sample2' ),
-					'page_title' => __( 'VSP Sample Plugin2' ),
-					'submenu'    => true,
+					'menu_title' => __( 'WPOnion Settings Demo' ),
+					'menu_slug'  => 'wponion-settings-demo',
 				),
-				'framework_title' => __( 'Settings Page' ),
 			);
 
 			/**
